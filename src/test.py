@@ -1,5 +1,8 @@
-from qiskit import QuantumCircuit, Aer, transpile
+from qiskit import QuantumCircuit, transpile
 from qiskit.visualization import plot_histogram
+from qiskit import QuantumCircuit, transpile
+from qiskit_aer import Aer
+import matplotlib.pyplot as plt
 
 # 1 qubit in superposition
 qc = QuantumCircuit(1, 1)
@@ -16,7 +19,6 @@ counts = result.get_counts()
 print("Counts:", counts)
 
 
-try:
-    plot_histogram(counts).show()
-except:
-    pass
+
+plot_histogram(counts)
+plt.show()
